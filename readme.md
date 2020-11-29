@@ -55,7 +55,7 @@ ___
 
 Imagine um site que carrega dados de uma API, então quando o dados é recebido é possível processá-lo e formatá-lo de forma que fique agradável visualmente para o usuário final. Se tentarmos fazer o processamento e a formatação dos dados da API antes de realizar a coleta dos dados, o resultado será um erro, ou uma página em branco. Usando uma Promise, é assegurado que a API não será processada nem formatada até que a chamada da API seja bem sucedida.
 
-![API](https://i.postimg.cc/DwZ5hqzf/api.png)
+![API](https://i.postimg.cc/9M7CnR9J/request-API.png)
 
 ## Quem são? Onde vivem? O que comem? Muita calma nessa hora pequeno padawan...
 
