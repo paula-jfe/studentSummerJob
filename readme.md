@@ -16,7 +16,7 @@ ___
 
 # Por que isso é importante?
 
-Como mencionado anteriormente, utilizando callbacks para funções assíncronas pode tornar a interpretação do seu código muito complexa e nada intuitiva. O grande desafio nesse tipo de código é entender a sequência que cada linha de código assíncrono é executada de cima para baixo, pois pode se tornar um verdadeiro **"callback hell"**, também conhecido como **"código hadouken"**. Callback hell ou código hadouken são os termos adotados quando temos esse tipo de código complexo, e nada melhor do que uma demonstração para você entender o porquê desse nome.
+Como mencionado anteriormente, utilizando callbacks para funções assíncronas pode tornar a interpretação do seu código muito complexa e nada intuitiva, além disso, se tiver um erro em alguma função, **todas as outras funções são afetadas**. Um grande desafio nesse tipo de código é entender a sequência que cada linha de código assíncrono é executada de cima para baixo, pois pode se tornar um verdadeiro **"callback hell"**, também conhecido como **"código hadouken"**. Callback hell ou código hadouken são os termos adotados quando temos esse tipo de código complexo, e nada melhor do que uma demonstração para você entender o porquê desse nome.
   
 ```javascript
 
@@ -48,25 +48,28 @@ Hoje você aprenderá a aplicar funções assíncronas de diferentes maneiras, l
 ![Hadouken](https://cdn.ome.lt/y3fdlf74ATazZwr660wZqt5FGiQ=/770x0/smart/uploads/conteudo/fotos/Ryu_Hadouken.gif)
 ___
 
-# APIs
+
+# Ok, mas o que são exatamente essas APIs que farão a mágica acontecer?
+
+
 
 Imagine um site que carrega dados de uma API, então quando o dados é recebido é possível processá-lo e formatá-lo de forma que fique agradável visualmente para o usuário final. Se tentarmos fazer o processamento e a formatação dos dados da API antes de realizar a coleta dos dados, o resultado será um erro, ou uma página em branco. Usando uma Promise, é assegurado que a API não será processada nem formatada até que a chamada da API seja bem sucedida.
 
-
-
+![API](https://i.postimg.cc/DwZ5hqzf/api.png)
 
 ## Quem são? Onde vivem? O que comem? Muita calma nessa hora pequeno padawan...
 
-As Promises são objetos utilizados para realizar um processamento assíncrono, simples assim. Esse objeto guardará um valor futuro ou não, dependendo da sua resposta, e portanto ela possui três possíveis estados:
+As Promises são objetos utilizados para realizar um processamento assíncrono, simples assim. Esse objeto guardará um valor futuro, dependendo da sua resposta, e portanto ela possui três possíveis estados:
 
 - pending (pendente): Estado onde a Promise acaba de ser iniciada. Neste momento ela ainda não tem uma resposta, portanto não foi realizada nem rejeitada.
 - fulfilled (realizada): Este é o estado que todos nós amamos. Neste momento houve sucesso na operação, e a Promise retorna a resposta esperada.
 - rejected (rejeitado):  Neste momento o estado da Promise é rejeitado, ela não retorna a resposta esperada pois a operação não é bem sucedida.
 
+Entenda realmente como uma **promessa**, você espera que algo que foi prometido aconteça, certo? É isso mesmo!
+
 
 objetos que os programadores podem usar para criar softwares ou interagir com sistemas externos. Ela fornece aos desenvolvedores comandos para executar operações comuns para que eles não tenham que escrever um código do zero
 
-A expressão Application Programming Interface, ou, em português, Interface de Programação de Aplicativos, originou o acrônimo API.
 
 As APIs permitem que o usuário final utilize um aplicativo, software ou até uma simples planilha, consultando, alterando e armazenando dados de diversos sistemas, sem que o usuário precise acessá-los diretamente.
 O intuito de uma API é trocar dados entre sistemas diferentes, na maior parte das vez essas trocas de dados tem como objetivo automatizar processos manuais e/ou permitir a criação de novas funcionalidades.
