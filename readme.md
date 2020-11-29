@@ -42,22 +42,33 @@ streetFighter(function(startNewGame) {
 
 ```
 
+![Hadouken](https://cdn.ome.lt/y3fdlf74ATazZwr660wZqt5FGiQ=/770x0/smart/uploads/conteudo/fotos/Ryu_Hadouken.gif)
+
 Agora você entende o porquê do *hadouken*, certo? Em algumas linguagens como o Python, que você verá no módulo de back-end, o que acontece na primeira linha deve terminar antes da leitura da segunda linha, mas isso não acontece no JavaScript, e para reduzir essa complexidade e trabalhar as boas práticas de programação, você pode usar uma Promise. As Promises *(Promessas)* são essenciais para o dia a dia de um desenvolvedor, é uma das features, ou seja, funcionalidades mais importantes da linguagem JavaScript, e a arte de **realizar requisições às APIs** *(Application Programming Interface ou em português, Interface de Programação de Aplicativos)* dependerá do bom uso delas.
 Hoje você aprenderá a aplicar funções assíncronas de diferentes maneiras, lapidando esse conhecimento na sua formação de desenvolvedor.
-
-![Hadouken](https://cdn.ome.lt/y3fdlf74ATazZwr660wZqt5FGiQ=/770x0/smart/uploads/conteudo/fotos/Ryu_Hadouken.gif)
 ___
 
 
 # Ok, mas o que são exatamente essas APIs que farão a mágica acontecer?
 
+API é o acrônimo, abreviação, de Application Programming Interface (Interface de Programação de Aplicativos), e como podemos interpretar do nome, podem ser aplicações, pequena parte de uma aplicação, uma parte de um software que realiza uma determinada função ou uma determinada aplicação de um servidor, que tem como objetivo comunicar com outras aplicações.
+Existem APis síncronas e assíncronas. Um exemplo de API síncrona é a API de console, cujo método mais comum é o **console.log()**, que você tanto utiliza no *debug* do seu código JavaScript.
+
+```javascript
+console.log('Esta é uma API síncrona!');
+```
+
+Uma API síncrona *executará a operação antes de iniciar a próxima operação*, mas o nosso interesse aqui é falar sobre as **APIs assíncronas**. Os códigos que você criará com JavaScript muitas vezes farão requisições assíncronas às APIs, e como a palavra assíncrona permite entender, o objeto de resposta não será retornado imediatamente, levará algum tempo para ele ser retornado, ou seja, as **requisições assíncronas ocorrerão no *background***, em segundo plano durante a operação. Imagine por um momento que você decide formatar os dados previstos de uma API assíncrona. Se você fizer a requisição de forma síncrona, você ainda não recebeu esses dados e portanto você não terá dados para formatar, logo, você ficaria *chocado* com o seu código quebrado!
+
+As APIs requisitadas de forma assíncrona, permitirão a busca e modificação de dados em fontes externas, como quando você sabiamente quiser buscar tudo o que estão falando da Trybe no Twitter, através das hashtags #trybe ou #tryber, ou quando você quiser compartilhar algum conteúdo sobre a Trybe através do botão “Compartilhar no Twitter”. E quando pensamos em toda a Web, podemos dizer que a Web funciona como uma rede gigantesca de servidores e conexões. Como você já viu até aqui, você pode realizar requisição a um servidor remoto quando digita a URL de algum site no seu navegador, e quando seu navegador recebe essa resposta, os elementos do site são renderizados no *DOM*. Para o navegador, o servidor do site é considerado uma API, e portanto, toda vez que você acessa um novo site, você está requisitando uma nova API. **Mas cuidado, uma API não é a mesma coisa que um servidor remoto, uma API é um conjunto de códigos com rotinas e padrões que interpretarão a sua solicitação e traduzirão o que você precisa te enviando os dados solicitados como resposta.**
+
+![API](https://i.postimg.cc/MK3njRzF/request-API3.png)
+
+Em resumo, quando uma empresa disponibiliza uma API para uso, ela nada mais nada menos está oferecendo à você uma oportunidade de obter o ponto de acesso de parte do banco de dados dela, através da requisição à URL dedicada ao acesso desses dados.
+___
 
 
-Imagine um site que carrega dados de uma API, então quando o dados é recebido é possível processá-lo e formatá-lo de forma que fique agradável visualmente para o usuário final. Se tentarmos fazer o processamento e a formatação dos dados da API antes de realizar a coleta dos dados, o resultado será um erro, ou uma página em branco. Usando uma Promise, é assegurado que a API não será processada nem formatada até que a chamada da API seja bem sucedida.
-
-![API](https://i.postimg.cc/Nf17wdYw/request-API2.png)
-
-## Quem são? Onde vivem? O que comem? Muita calma nessa hora pequeno padawan...
+# Promises: Quem são? Onde vivem? O que comem? Muita calma nessa hora pequeno padawan...
 
 As Promises são objetos utilizados para realizar um processamento assíncrono, simples assim. Esse objeto guardará um valor futuro, dependendo da sua resposta, e portanto ela possui três possíveis estados:
 
