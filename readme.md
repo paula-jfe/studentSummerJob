@@ -310,7 +310,7 @@ A função fetch() fornecerá ao navegador um meio de executar requisições HTT
 Vamos fazer nossa primeira requisição API fetch juntos.
 
 Vamos utilizar a Shibe.API e eu não tenho dúvidas de que você vai amar esse exercício.
-URL para a leitura da documentação: [Shibe.API](https://shibe.online/).
+URL para a leitura da documentação: [Shibe.API](https://shibe.online/).<br/>
 Importante: Invista um tempo lendo a documentação, crie esse hábito, a documentação é muito parceira!
 O que diz a documentação?
 - Faça uma requisição GET na seguinte URL: http://shibe.online/api/shibes?count=[1-100]&urls=[true/false]&httpsUrls=[true/false] .
