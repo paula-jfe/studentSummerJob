@@ -154,7 +154,7 @@ ___
 
 # Antes de prosseguirmos nessa viagem maravilhosa rumo à terra das requisições às APIs, PARE!!! E então anote essas observações extremamente importantes!
 
-## Para você e, somente você, que quer rodar o código no VS Code, através do Node:
+## Opção 1: Para você e, somente você, que quer rodar o código no VS Code, através do Node:
 
 **Você precisará instalar o node-fetch**. Este é um módulo que trará o window.fetch para o Node.js e portanto você conseguirá utilizar o método fetch também no Node. Siga as instruções abaixo para uma instalação correta.
 
@@ -178,7 +178,7 @@ const fetch = require(‘node-fetch’);
 
 *Pronto, tudo certo para você começar a desenvolver. A partir desse momento o céu é o limite!*
 
-## Para você que AMARIA rodar o código no navegador e NÂO TESTARÁ o código no VS Code utilizando o Node:
+## Opção 2: Para você que AMARIA rodar o código no navegador e NÂO TESTARÁ o código no VS Code utilizando o Node:
 
 - **Na última linha do seu código você precisará digitar o seguinte:**
 
@@ -187,6 +187,7 @@ window.onload = () => asyncFunction();
 ```
 
 *Isso é extremamente **necessário**, do contrário, é muito provável que nada tenha sido renderizado no seu navegador, visto que sua função assíncrona pode não ter naquele momento qualquer dado retornado. Você escrevendo esse código garante que ao carregar sua página, uma função anônima será executada, e o resultado dessa função anônima é chamar a sua função assíncrona **"asyncFunction"**, fazendo a renderização somente quando houver uma resposta da sua função assíncrona.*
+___
 
 
 
