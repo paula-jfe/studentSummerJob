@@ -359,7 +359,9 @@ const getCharacter = async (id) => {
 getCharacter(4).then(person => console.log(person.name));
 ```
 
-Pronto, se tudo ocorreu como esperado, você deu de cara com o lado negro da força! Parabéns!!!
+Pronto, se tudo ocorreu como esperado você deu de cara com o lado negro da força! Parabéns!!!
+
+[Vader](https://i.pinimg.com/originals/77/2c/07/772c07bc1f61c935eab45c5649bc35d7.gif)
 
 Você pode usar callbacks, Promises, async await, o método assíncrono que preferir, contanto que seu código seja compreensível e intuitivo para qualquer desenvolvedor realizar manutenção. O importante na prática é que independente do método escolhido, você tenha um código simples que possa lidar com os erros. ***#vidadedev #trybe #tryber #vqv***
 
