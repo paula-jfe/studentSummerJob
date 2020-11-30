@@ -149,10 +149,12 @@ winHackathon(false);
 Como você percebeu, quando a Promise é bem sucedida, a função **retorna a condição passada para resolve normalmente**, mostrando a mensagem **"Bora codar!"**, porém quando a função é mal sucedida, o *output* do seu terminal **mostra a condição passada para reject**, mensagem **"Preciso terminar meus projetos."** *seguida de mensagens de erros!* Você entenderá como tratar esses erros a seguir.
 
 ![PushButton](https://thumbs.gfycat.com/CanineIdealHydra-size_restricted.gif)
+___
 
-### Antes de prosseguirmos nessa viagem maravilhosa rumo à terra das requisições às APIs, PARE e anote essas observações extremamente importantes!
 
-#### Para você e, somente você, que quer rodar o código no VS Code, através do Node:
+# Antes de prosseguirmos nessa viagem maravilhosa rumo à terra das requisições às APIs, PARE!!! E então anote essas observações extremamente importantes!
+
+## Para você e, somente você, que quer rodar o código no VS Code, através do Node:
 
 **Você precisará instalar o node-fetch**. Este é um módulo que trará o window.fetch para o Node.js e portanto você conseguirá utilizar o método fetch também no Node. Siga as instruções abaixo para uma instalação correta.
 
@@ -176,7 +178,7 @@ const fetch = require(‘node-fetch’);
 
 *Pronto, tudo certo para você começar a desenvolver. A partir desse momento o céu é o limite!*
 
-### Para você que AMARIA rodar o código no navegador e NÂO TESTARÁ o código no VS Code utilizando o Node:
+## Para você que AMARIA rodar o código no navegador e NÂO TESTARÁ o código no VS Code utilizando o Node:
 
 - **Na última linha do seu código você precisará digitar o seguinte:**
 
