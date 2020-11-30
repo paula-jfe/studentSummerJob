@@ -345,7 +345,7 @@ const getCharacter = async (id) => {
 
 ```
 
-- Quarto passo: Chamando a função e passando um atributo Id como parâmetro.
+- Quarto passo: Chamando a função, passando um atributo Id como parâmetro e imprimindo o nome do personagem.
 
 ```javascript
 const fetch = require('node-fetch');
