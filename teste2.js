@@ -72,7 +72,7 @@ catch (e) {
 
 } */
 
-const errorFunction = () => {
+/* const errorFunction = () => {
   throw new Error("Deu ruim!");
 }
 
@@ -85,9 +85,17 @@ const testingError = async () => {
   }
 }
 
-testingError();
+testingError(); */
 
+const fetch = require('node-fetch');
 
+const getCharacter = async (id) => {
+  const result = await fetch(`https://swapi.dev/api/people/${id}`);
+  const person = await result.json();
+  return person;
+}
+
+getCharacter(4).then(person => console.log(person.name));
 
 
 

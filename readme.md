@@ -309,16 +309,59 @@ Na aula anterior você soube sobre a existência do método API fetch, agora vam
 A função fetch() fornecerá ao navegador um meio de executar requisições HTTP utilizando promises e requer somente a URL da fonte de dados que você deseja acessar. A promise que retornar da função fetch() não rejeita status de erro HTTP, exceto caso haja algum problema de conexão, pois se ela for mal sucedida ou bem sucedida, você terá essa informação no seu status, portanto, com essa função é possível receber, tratar, enviar dados e lidar com erros.
 Vamos fazer nossa primeira requisição API fetch juntos.
 
-Vamos utilizar a Shibe.API e eu não tenho dúvidas de que você vai amar esse exercício.
-URL para a leitura da documentação: [Shibe.API](https://shibe.online/).<br/>
+Vamos utilizar a Swapi.dev API e eu não tenho dúvidas de que você vai amar esse exercício.
+URL para a leitura da documentação: [Swapi.dev API](https://swapi.dev/documentation).<br/>
 Importante: Invista um tempo lendo a documentação, crie esse hábito, a documentação é muito parceira!
 O que diz a documentação?
-- Faça uma requisição GET na seguinte URL: http://shibe.online/api/shibes?count=[1-100]&urls=[true/false]&httpsUrls=[true/false] .
-- Você receberá uma resposta JSON de imagens randômicas que aparenta isso:
+- Todos os recursos oferecem suporte a um parâmetro de pesquisa string que filtra o conjunto de recursos retornados. Isso permite que você faça consultas com a URL: https://swapi.dev/api/people/?search=r2.
+A documentação dessa API é muito boa, e como você pode ver, há diversos dados que você pode obter através do uso dela.
+Hora de por as mãos na massa, ou melhor dizendo, nas teclas. Vamos praticar baby steps.
 
+- Primeiro passo: Importanto do fetch para realizar o teste da API no Node.
+```javascript
+const fetch = require('node-fetch');
+```
 
+- Segundo passo: Criando função assíncrona para realizar a requisição.
+```javascript
+const fetch = require('node-fetch');
 
-Você pode usar callbacks, Promises, async await, o método assíncrono que preferir, contanto que seu código seja compreensível e intuitivo para qualquer desenvolvedor realizar manutenção. O importante na prática é que independente do método escolhido, você tenha um código simples que lide com os erros. ***#vidadedev #trybe #tryber #vqv***
+const getCharacter = async (id) => {
+
+}
+```
+
+- Terceiro passo: Utilizando a URL passada na documentação para requisitar o personagem mais espetacular da saga.
+Se você requisitar os dados sem transformar a resposta em dados JSON (JavaScript Object Notation) através da função .json(), você não será capaz de acessar e manipular os dados desse objeto com JavaScrip através do Node.
+
+```javascript
+const fetch = require('node-fetch');
+
+const getCharacter = async (id) => {
+  const result = await fetch(`https://swapi.dev/api/people/${id}`);
+  const person = await result.json();
+  return person;
+}
+
+```
+
+- Quarto passo: Chamando a função e passando um atributo Id como parâmetro.
+
+```javascript
+const fetch = require('node-fetch');
+
+const getCharacter = async (id) => {
+  const result = await fetch(`https://swapi.dev/api/people/${id}`);
+  const person = await result.json();
+  return person;
+}
+
+getCharacter(4).then(person => console.log(person.name));
+```
+
+Pronto, se tudo ocorreu como esperado, você deu de cara com o lado negro da força! Parabéns!!!
+
+Você pode usar callbacks, Promises, async await, o método assíncrono que preferir, contanto que seu código seja compreensível e intuitivo para qualquer desenvolvedor realizar manutenção. O importante na prática é que independente do método escolhido, você tenha um código simples que possa lidar com os erros. ***#vidadedev #trybe #tryber #vqv***
 
 # Recursos Adicionais
 

@@ -1,0 +1,23 @@
+{
+  "name": "studentSummerJob",
+  "version": "1.0.0",
+  "description": "Na última aula você viu que **callbacks** são funções passadas como parâmetro para outras funções, mas percebeu que quanto mais complexa for a função, o uso de callbacks se torna inviável. Callbacks eram o unico meio de realizar funções assíncronas durante muito tempo, mas tudo no mundo evolui e é por isso que hoje você entrará no universo maravilhoso das **Promises**. As Promises são amplamente utilizadas para baixar e ler arquivos ou comunicar com banco de dados de uma maneira muito mais compreensível e intuitiva que as callbacks. Na aula hoje aprenderemos a fazer requisições de API *(Application Programming Interface ou em português, Interface de Programação de Aplicativos)* em uma página web, relembraremos como funcionam as funções assíncronas e faremos exercícios para fixar esse conhecimento. ___",
+  "main": "teste.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paula-jfe/studentSummerJob.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paula-jfe/studentSummerJob/issues"
+  },
+  "homepage": "https://github.com/paula-jfe/studentSummerJob#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
