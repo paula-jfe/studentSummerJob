@@ -91,8 +91,8 @@ const fetch = require('node-fetch');
 
 const getCharacter = async (id) => {
   const result = await fetch(`https://swapi.dev/api/people/${id}`);
-  const person = await result.json();
-  return person;
+  const character = await result.json();
+  return character;
 }
 
 getCharacter(4).then(person => console.log(person.name));
