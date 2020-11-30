@@ -176,6 +176,27 @@ Vamos falar sobre **then() e catch()**. O método **then()** é chamado assim qu
 
 Conseguiu ver a diferença agora que tratou o erro? Conseguiu perceber que o método catch() está encadeado logo após o método then()? Resumindo, o método then() recebe e trata o retorno do método resolve, e o método catch() recebe e trata o retorno do método reject.
 
+## Chaining Promises com then() e catch().
+Se você precisa executar uma sequência de operações assíncronas trabalhando os dados retornados até atingir seu objetivo final, você pode utilizar o encadeamento (Chaining) da Promise com o then(). Mas lembre-se, o catch captura qualquer erro que aconteça durante as operações com o then(), portanto você pode colocá-lo no final do seu código, após o último then(), caso tenha interesse de tratar qualquer erro antecedente à ele da mesma maneira. Vamos ver um exemplo de Promise encadeada com then() e catch().
+
+```javascript
+const chainingOperation = new Promise((resolve, reject) => {
+  const number = 15;
+
+  if (number < 18) {
+    return reject('You are not of legal age yet.');
+  }
+  return resolve('You can')
+})
+  .then(resolveOptionOne => (`${resolveOptionOne} drive,`))
+  .then(otherOption => (`${otherOption} party`))
+  .then(optionThree => console.log(`${optionThree} and drink water...`))
+  .catch(rejectOption => console.log(`${rejectOption}`));
+```
+
+Rode o código no Node e veja a resposta das promises, depois mude o número da constante number para 18 e veja como o código encadeado funciona. *Não esqueça que o console.log() deve ser feito apenas no último then(), do contrário o retorno das promises anteriores serão **"undefined"***.
+
+![Toast](https://conteudo.imguol.com.br/c/tecnologia/gif/aniversario/09_dicaprio.gif)
 ___
 
 
