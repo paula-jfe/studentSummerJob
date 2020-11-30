@@ -152,7 +152,11 @@ Como você percebeu, quando a Promise é bem sucedida, a função **retorna a co
 ___
 
 
-# Antes de prosseguirmos nessa viagem maravilhosa rumo à terra das requisições às APIs, PARE!!! E então anote essas observações extremamente importantes!
+# Gestores de fluxo: Vamos entender um pouco mais sobre o uso das Promises.
+___
+
+
+# Antes de prosseguirmos nessa viagem maravilhosa rumo à terra das requisições às APIs, PARE!!! Anote essas observações extremamente importantes!
 
 ## Opção 1: Para você e, somente você, que quer testar o código no VS Code, através do NODE:
 
@@ -186,9 +190,26 @@ const fetch = require(‘node-fetch’);
 window.onload = () => asyncFunction();
 ```
 
-*Isso é extremamente **necessário**, do contrário, é muito provável que nada tenha sido renderizado no seu navegador, visto que sua função assíncrona pode não ter naquele momento qualquer dado retornado. Você escrevendo esse código garante que ao carregar sua página, uma função anônima será executada, e o resultado dessa função anônima é chamar a sua função assíncrona **"asyncFunction"**, fazendo a renderização somente quando houver uma resposta da sua função assíncrona.*
+*Isso é extremamente **necessário**, do contrário, é muito provável que nada tenha sido renderizado no seu navegador, visto que sua função assíncrona pode não ter naquele momento qualquer dado retornado. Você escrevendo esse código garante que ao carregar sua página, uma função anônima será executada, e o resultado dessa função anônima é chamar a sua função assíncrona **"asyncFunction()"**, fazendo a renderização somente quando houver uma resposta da sua função assíncrona.*
 ___
 
 
 
 
+
+
+
+
+
+O JavaScript proporciona três métodos para você trabalhar com códigos assíncronos. Você já estudou ontem sobre callbacks, que executam funções passadas como parâmetro e retornam seu resultado apenas quando o código assíncrono for totalmente executado, estudou hoje as Promises, que permitem o encadeamento de códigos, e agora veremos mais um método **que faz exatamente a mesma coisa** para *enriquecer ainda mais seu conhecimento sobre funções assíncronas*, o **async await**.
+
+![MindBlowing](https://thumbs.gfycat.com/FickleUnsightlyIndianspinyloach-small.gif)
+
+# Método utilizando async await
+
+
+# Recursos Adicionais
+
+[Quer estudar mais sobre APIs?]()
+[Veja outros exemplos utilizando Promises]()
+[Funções assíncronas com async e await]()

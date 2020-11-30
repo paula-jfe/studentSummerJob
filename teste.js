@@ -1,21 +1,18 @@
-const winHackathon = (onTrack) => {
-  new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (onTrack === false) {
-        return reject(console.log("Preciso terminar meus projetos"));
+const niceGrades = true
+
+const newConsole = new Promise(
+  (resolve, reject) => {
+    if (niceGrades) {
+      const console = {
+        brand: 'Nintendo',
+        model: 'Switch',
+        color: 'gray',
+        game: 'Super Mario Odyssey'
       }
-      return resolve(console.log("Bora codar!"));
-    }, 2000);
-  });
-}
-
-winHackathon(true);
-
-/* const winHackathon = new Promise((resolve, reject) => {
-  const number = Math.floor(Math.random() * 11);
-
-  if (number > 10 || number <= 5) {
-    return reject(console.log(`Que fracasso =( Nosso número foi ${number}`));
+      resolve(console)
+    } else {
+      /* const didntStudied = ('I will not get a new console because my grades are bad') */
+      reject('I will not get a new console because my grades are bad')
+    }
   }
-  resolve(console.log(`Que sucesso =) nosso número foi ${number}`));
-}); */
+)
