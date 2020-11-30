@@ -194,19 +194,32 @@ const chainingOperation = new Promise((resolve, reject) => {
   .catch(rejectOption => console.log(`${rejectOption}`));
 ```
 
-![Toast](https://media.tenor.com/images/21c7927187145ea4450297ef192ec5e5/tenor.gif)
-
 Rode o código no Node e veja a resposta das promises, depois mude o número da constante number para 18 e veja como o código encadeado funciona. *Não esqueça que o console.log() deve ser feito apenas no último then(), do contrário o retorno das promises anteriores serão **"undefined"***.
-___
-
 
 O JavaScript proporciona três métodos para você trabalhar com códigos assíncronos. Você já estudou ontem sobre callbacks, que executam funções passadas como parâmetro e retornam seu resultado apenas quando o código assíncrono for totalmente executado, estudou hoje as Promises, que permitem o encadeamento de códigos, e agora veremos mais um método **que faz exatamente a mesma coisa**, apenas para *enriquecer ainda mais seu conhecimento sobre funções assíncronas*, o **async await**.
 
 ![MindBlowing](https://thumbs.gfycat.com/FickleUnsightlyIndianspinyloach-small.gif)
+___
 
-# Método utilizando async await
 
+# Usando async await
 
+Vamos entender melhor... O que você pensa quando lê **async**? A palavra async *remete à algo que será assíncrono*, então quando você colocar async exatamente antes de chamar a sua função, você está dizendo: **Ei, essa função é assíncrona, ela vai me retornar uma Promise!** Muito bem jovem padawan, é isso mesmo! E quanto a palavra **await**? É mamão com açúcar! Se você colocar await dentro da função, *exatamente antes de da linha de código que fará sua operação assíncrona*, você está dizendo: **Ei, espere essa operação terminar para continuar, ok**? Agora jovem padawan, você está perto de se tornar um verdadeiro Jedi, então vamos entender essa nova sintaxe na prática.
+
+```javascript
+const prepareHamburger = (ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7) => {
+  return ingredient1 + ' ' + ingredient2 + ' ' + ingredient3 + ' ' + ingredient4 + ' ' + ingredient5 + ' ' + ingredient6 + ' ' + ingredient7;
+}
+
+const eatHamburger = async () => {
+  //Lembre que aqui temos uma arrow function que por default tem uma função anônima
+  //Nesse tipo de função o async vem antes da função anônima, e não antes de eatHamburger
+  const result = await (prepareHamburger('Dois hambúrgueres,', 'alface,', 'queijo,', 'molho especial,', 'cebola,', 'e picles', 'num pão com gergelim!'))
+  console.log(result);
+}
+
+eatHamburger();
+```
 
 # Antes de prosseguirmos nessa viagem maravilhosa rumo à terra das requisições às APIs, PARE!!! Anote essas observações extremamente importantes!
 
