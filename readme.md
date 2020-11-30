@@ -154,9 +154,9 @@ ___
 
 # Antes de prosseguirmos nessa viagem maravilhosa rumo à terra das requisições às APIs, PARE!!! E então anote essas observações extremamente importantes!
 
-## Opção 1: Para você e, somente você, que quer rodar o código no VS Code, através do Node:
+## Opção 1: Para você e, somente você, que quer testar o código no VS Code, através do NODE:
 
-**Você precisará instalar o node-fetch**. Este é um módulo que trará o window.fetch para o Node.js e portanto você conseguirá utilizar o método fetch também no Node. Siga as instruções abaixo para uma instalação correta.
+**Você precisará instalar o node-fetch**. Este é um módulo que trará o window.fetch para o Node.js e portanto você conseguirá utilizar o método fetch também no Node. Siga as instruções abaixo para a instalação.
 
 - **Caso você ainda não tenha o package.json no seu diretório da aula de hoje, rode o seguinte comando:**
 
@@ -178,7 +178,7 @@ const fetch = require(‘node-fetch’);
 
 *Pronto, tudo certo para você começar a desenvolver. A partir desse momento o céu é o limite!*
 
-## Opção 2: Para você que AMARIA rodar o código no navegador e NÂO TESTARÁ o código no VS Code utilizando o Node:
+## Opção 2: Para você que vai testar o código no NAVEGADOR:
 
 - **Na última linha do seu código você precisará digitar o seguinte:**
 
