@@ -1,18 +1,19 @@
-const niceGrades = true
+/* wakeUp()
+  .then(result => haveBreakfast(result))
+  .catch(() => {
+    console.error('Get hungry');
+  }) */
 
-const newConsole = new Promise(
-  (resolve, reject) => {
-    if (niceGrades) {
-      const console = {
-        brand: 'Nintendo',
-        model: 'Switch',
-        color: 'gray',
-        game: 'Super Mario Odyssey'
-      }
-      resolve(console)
-    } else {
-      /* const didntStudied = ('I will not get a new console because my grades are bad') */
-      reject('I will not get a new console because my grades are bad')
+
+  const haveBreakfast = new Promise((resolve, reject) => {
+    const morningRoutine = Math.floor(Math.random() * 2) + 1;
+    const breakfast = 'cheese bread';
+    const hungry = 'you woke up too late for breakfast';
+
+    if (morningRoutine === 2) {
+      return reject(hungry);
     }
-  }
-)
+    resolve(breakfast);
+  })
+  .then(resolveOption => console.log(`Nice done, you'll have ${resolveOption} for breakfast`))
+  .catch(rejectOption => console.log(`Poor you, ${rejectOption}`));

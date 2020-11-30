@@ -79,7 +79,7 @@ As Promises são objetos utilizados para realizar um processamento assíncrono, 
 Entenda realmente como uma **promessa**, nem sempre o que é prometido acontece devido à algum fator qualquer ali no meio do caminho, mas você espera que algo que foi prometido aconteça, certo? É isso mesmo!
 
 As Promises possuem **respostas imutáveis**, ou seja, uma vez realizadas, sendo elas rejeitadas ou bem sucedidas, seus objetos de resposta não mudam até a próxima execução.
-Para criar um Promise você utilizará um **Construtor**. *Construtores são como funções que criam objetos semelhantes com a mesma estrutura, propriedades e métodos.* Para esse Construtor você passará uma função chamada de executor, que receberá dois parâmetros, resolve e reject, que são métodos que gerenciam o ciclo de vida de uma Promise.
+Para criar um Promise você utilizará um **Construtor**. *Construtores são como funções que criam objetos semelhantes com a mesma estrutura, propriedades e métodos.* Para esse Construtor você passará uma função chamada de executor, que receberá dois parâmetros, **resolve e reject**, que são métodos estáticos que gerenciam o ciclo de vida de uma Promise.
 Na prática, é como se você fizesse um pedido ao executor e ele olhasse para você e respondesse se tudo estivesse certo “ok, vamos te enviar”, ou se algo desse errado, “não, infelizmente está indisponível”.
 Ainda está nublado? Vamos olhar o próximo exemplo e ver como a sintaxe do Construtor de uma Promise é simples.
 
@@ -146,13 +146,36 @@ winHackathon(false);
 ```
 
 *Veja a resposta que você pode ter alterando a chamada da função winHackathon(false) para winHackathon(true).*
-Como você percebeu, quando a Promise é bem sucedida, a função **retorna a condição passada para resolve normalmente**, mostrando a mensagem **"Bora codar!"**, porém quando a função é mal sucedida, o *output* do seu terminal **mostra a condição passada para reject**, mensagem **"Preciso terminar meus projetos."** *seguida de mensagens de erros!* Você entenderá como tratar esses erros a seguir.
+Como você percebeu, quando a Promise é bem sucedida, a função **retorna a condição passada para resolve normalmente**, mostrando a mensagem **"Bora codar!"**, porém quando a função é mal sucedida, o *output* do seu terminal **mostra a condição passada para reject**, mensagem **"Preciso terminar meus projetos."** *seguida de mensagens de erros!* Você entenderá como tratar esses erros a seguir, é uma ***promessa***!
 
 ![PushButton](https://thumbs.gfycat.com/CanineIdealHydra-size_restricted.gif)
 ___
 
 
 # Gestores de fluxo: Vamos entender um pouco mais sobre o uso das Promises.
+
+Pois é, nós fizemos uma ***promessa*** para você que você entenderá como tratar os erros de uma Promise, agora essa promessa foi bem sucedida e você vai conhecer mais alguns métodos que a Promise possui para você trabalhar.
+
+Vamos falar sobre **then() e catch()**. O método **then()** é chamado assim que uma Promise é bem sucedida, e **então *(then())* decidirá o que fazer com os dados obtidos da Promise**. Mas o que podemos fazer quando a Promise é mal sucedida? Nesse caso podemos usar o método **catch()**. A Promise mal sucedida vai retornar um aviso de erro, **esse erro vai ser capturado *(catch())* e tratado da forma que você bem quiser**. Maravilhoso, não?
+*Os métodos then() e catch() também retornarão promises*, mas diferentemente do método **Promise** original, eles não executam funções callbacks, portanto não substituem o **Constructor Promise**. Utilizando o método catch() logo após o método then(), caso a Promise seja mal sucedida elá já passará para as especificações do método catch(), trazendo sua mensagem de erro no output do terminal. Vamos ver um exemplo.
+
+```javascript
+  const haveBreakfast = new Promise((resolve, reject) => {
+    const morningRoutine = Math.floor(Math.random() * 2) + 1;
+    const breakfast = 'cheese bread';
+    const hungry = 'you woke up too late for breakfast';
+
+    if (morningRoutine === 2) {
+      return reject(hungry);
+    }
+    resolve(breakfast);
+  })
+  .then(resolveOption => console.log(`Nice done, you'll have ${resolveOption} for breakfast`))
+  .catch(rejectOption => console.log(`Poor you, ${rejectOption}`));
+```
+
+Conseguiu ver a diferença agora que tratou o erro? Conseguiu perceber que o método catch() está encadeado logo após o método then()? Resumindo, o método then() recebe e trata o retorno do método resolve, e o método catch() recebe e trata o retorno do método reject.
+
 ___
 
 
@@ -201,15 +224,21 @@ ___
 
 
 
-O JavaScript proporciona três métodos para você trabalhar com códigos assíncronos. Você já estudou ontem sobre callbacks, que executam funções passadas como parâmetro e retornam seu resultado apenas quando o código assíncrono for totalmente executado, estudou hoje as Promises, que permitem o encadeamento de códigos, e agora veremos mais um método **que faz exatamente a mesma coisa** para *enriquecer ainda mais seu conhecimento sobre funções assíncronas*, o **async await**.
+O JavaScript proporciona três métodos para você trabalhar com códigos assíncronos. Você já estudou ontem sobre callbacks, que executam funções passadas como parâmetro e retornam seu resultado apenas quando o código assíncrono for totalmente executado, estudou hoje as Promises, que permitem o encadeamento de códigos, e agora veremos mais um método **que faz exatamente a mesma coisa**, apenas para *enriquecer ainda mais seu conhecimento sobre funções assíncronas*, o **async await**.
 
 ![MindBlowing](https://thumbs.gfycat.com/FickleUnsightlyIndianspinyloach-small.gif)
 
 # Método utilizando async await
 
 
+
+
+
+
+Você pode usar callbacks, Promises, async await, o método assíncrono que preferir, contanto que seu código seja compreensível e intuitivo para qualquer desenvolvedor realizar manutenção. O importante na prática é que independente do método escolhido, você tenha um código simples que lide com os erros. ***#vidadedev #trybe #tryber #vqv***
+
 # Recursos Adicionais
 
-[Quer estudar mais sobre APIs?]()
-[Veja outros exemplos utilizando Promises]()
+[Quer estudar APIs?]()
+[Entenda mais sobre Promises]()
 [Funções assíncronas com async e await]()
