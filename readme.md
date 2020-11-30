@@ -72,13 +72,13 @@ ___
 
 As Promises são objetos utilizados para realizar um processamento assíncrono, simples assim. Esse objeto guardará um valor futuro, dependendo da sua resposta, e portanto ela possui três possíveis estados:
 
-- pending (pendente): Estado onde a Promise acaba de ser iniciada. Neste momento ela ainda não tem uma resposta, portanto não foi realizada nem rejeitada.
-- fulfilled (realizada): Este é o estado que todos nós amamos. Neste momento houve sucesso na operação, e a Promise retorna a resposta esperada.
-- rejected (rejeitado):  Neste momento o estado da Promise é rejeitado, ela não retorna a resposta esperada pois a operação não é bem sucedida.
+- **pending (pendente): Estado onde a Promise acaba de ser iniciada. Neste momento ela ainda não tem uma resposta, portanto não foi realizada nem rejeitada.**
+- **fulfilled (realizada): Este é o estado que todos nós amamos. Neste momento houve sucesso na operação, e a Promise retorna a resposta esperada.**
+- **rejected (rejeitado):  Neste momento o estado da Promise é rejeitado, ela não retorna a resposta esperada pois a operação não é bem sucedida.**
 
 Entenda realmente como uma **promessa**, nem sempre o que é prometido acontece devido à algum fator qualquer ali no meio do caminho, mas você espera que algo que foi prometido aconteça, certo? É isso mesmo!
 
-As Promises possuem respostas imutáveis, ou seja, uma vez realizadas, sendo elas rejeitadas ou bem sucedidas, seus objetos de resposta não mudam até a próxima execução.
+As Promises possuem **respostas imutáveis**, ou seja, uma vez realizadas, sendo elas rejeitadas ou bem sucedidas, seus objetos de resposta não mudam até a próxima execução.
 Para criar um Promise você utilizará um **Construtor**. *Construtores são como funções que criam objetos semelhantes com a mesma estrutura, propriedades e métodos.* Para esse Construtor você passará uma função chamada de executor, que receberá dois parâmetros, resolve e reject, que são métodos que gerenciam o ciclo de vida de uma Promise.
 Na prática, é como se você fizesse um pedido ao executor e ele olhasse para você e respondesse se tudo estivesse certo “ok, vamos te enviar”, ou se algo desse errado, “não, infelizmente está indisponível”.
 Ainda está nublado? Vamos olhar o próximo exemplo e ver como a sintaxe do Construtor de uma Promise é simples.
@@ -145,10 +145,46 @@ const winHackathon = (onTrack) => {
 winHackathon(false);
 ```
 
-Veja a resposta que você pode ter alterando a chamada da função winHackathon(false) para winHackathon(true).
-Como você percebeu, quando a Promise é bem sucedida, a função retorna a condição passada para resolve normalmente, mostrando a mensagem "Bora codar!", porém quando a função é mal sucedida, o output do seu terminal mostra a condição passada para reject, mensagem "Preciso terminar meus projetos." seguida de mensagens de erros! Você entenderá como tratar esses erros a seguir.
+*Veja a resposta que você pode ter alterando a chamada da função winHackathon(false) para winHackathon(true).*
+Como você percebeu, quando a Promise é bem sucedida, a função **retorna a condição passada para resolve normalmente**, mostrando a mensagem **"Bora codar!"**, porém quando a função é mal sucedida, o *output* do seu terminal **mostra a condição passada para reject**, mensagem **"Preciso terminar meus projetos."** *seguida de mensagens de erros!* Você entenderá como tratar esses erros a seguir.
 
 ![PushButton](https://thumbs.gfycat.com/CanineIdealHydra-size_restricted.gif)
+
+### Antes de prosseguirmos nessa viagem maravilhosa rumo à terra das requisições às APIs, PARE e anote essas observações extremamente importantes!
+
+#### Para você e, somente você, que quer rodar o código no VS Code, através do Node:
+
+**Você precisará instalar o node-fetch**. Este é um módulo que trará o window.fetch para o Node.js e portanto você conseguirá utilizar o método fetch também no Node. Siga as instruções abaixo para uma instalação correta.
+
+- **Caso você ainda não tenha o package.json no seu diretório da aula de hoje, rode o seguinte comando:**
+
+```javascript
+npm init -y
+```
+
+- **Agora instale o node-fetch através do seguinte comando:**
+
+```javascript
+npm i node-fetch
+```
+
+- **E por último mas não menos importante, importe o node-fetch para o arquivo onde você escreverá o código JavaScript, digitando logo na primeira linha:**
+
+```javascript
+const fetch = require(‘node-fetch’);
+```
+
+*Pronto, tudo certo para você começar a desenvolver. A partir desse momento o céu é o limite!*
+
+### Para você que AMARIA rodar o código no navegador e NÂO TESTARÁ o código no VS Code utilizando o Node:
+
+- **Na última linha do seu código você precisará digitar o seguinte:**
+
+```javascript
+window.onload = () => asyncFunction();
+```
+
+*Isso é extremamente **necessário**, do contrário, é muito provável que nada tenha sido renderizado no seu navegador, visto que sua função assíncrona pode não ter naquele momento qualquer dado retornado. Você escrevendo esse código garante que ao carregar sua página, uma função anônima será executada, e o resultado dessa função anônima é chamar a sua função assíncrona **"asyncFunction"**, fazendo a renderização somente quando houver uma resposta da sua função assíncrona.*
 
 
 
