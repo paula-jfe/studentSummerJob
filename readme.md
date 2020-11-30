@@ -307,9 +307,9 @@ Você pode usar callbacks, Promises, async await, o método assíncrono que pref
 
 # Recursos Adicionais
 
-[Quer estudar sobre APIs?](https://www.redhat.com/pt-br/topics/api/what-are-application-programming-interfaces)
-[Entenda mais sobre Promises Português](https://medium.com/trainingcenter/entendendo-promises-de-uma-vez-por-todas-32442ec725c2)
-[Entenda mais sobre Promises Inglês](https://exploringjs.com/es6/ch_promises.html#sec_other-ways-creating-promises)
+[Quer estudar sobre APIs?](https://www.redhat.com/pt-br/topics/api/what-are-application-programming-interfaces)<br/>
+[Entenda mais sobre Promises Português](https://medium.com/trainingcenter/entendendo-promises-de-uma-vez-por-todas-32442ec725c2)<br/>
+[Entenda mais sobre Promises Inglês](https://exploringjs.com/es6/ch_promises.html#sec_other-ways-creating-promises)<br/>
 [Funções assíncronas com async e await](https://hcode.com.br/blog/javascript-assincrono-o-guia-completo-parte-5-entendendo-async-await
-)
-[Mais informações sobre try catch](https://www.w3schools.com/js/js_errors.asp)
+)<br/>
+[Mais informações sobre try catch](https://www.w3schools.com/js/js_errors.asp)<br/>
