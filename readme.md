@@ -207,19 +207,64 @@ ___
 Vamos entender melhor... O que você pensa quando lê **async**? A palavra async *remete à algo que será assíncrono*, então quando você colocar async exatamente antes de chamar a sua função, você está dizendo: **Ei, essa função é assíncrona, ela vai me retornar uma Promise!** Muito bem jovem padawan, é isso mesmo! E quanto a palavra **await**? É mamão com açúcar! Se você colocar await dentro da função, *exatamente antes de da linha de código que fará sua operação assíncrona*, você está dizendo: **Ei, espere essa operação terminar para continuar, ok**? Agora jovem padawan, você está perto de se tornar um verdadeiro Jedi, então vamos entender essa nova sintaxe na prática.
 
 ```javascript
-const prepareHamburger = (ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7) => {
-  return ingredient1 + ' ' + ingredient2 + ' ' + ingredient3 + ' ' + ingredient4 + ' ' + ingredient5 + ' ' + ingredient6 + ' ' + ingredient7;
-}
-
 const eatHamburger = async () => {
   //Lembre que aqui temos uma arrow function que por default tem uma função anônima
   //Nesse tipo de função o async vem antes da função anônima, e não antes de eatHamburger
-  const result = await (prepareHamburger('Dois hambúrgueres,', 'alface,', 'queijo,', 'molho especial,', 'cebola,', 'e picles', 'num pão com gergelim!'))
+  const result = await (prepareHamburger('Dois hambúrgueres,', 'alface,', 'queijo,', 'molho especial,', 'cebola', 'e picles', 'num pão com gergelim!'))
   console.log(result);
+}
+
+const prepareHamburger = (ingredients1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7) => {
+  return ingredients1 + ' ' + ingredient2 + ' ' + ingredient3 + ' ' + ingredient4 + ' ' + ingredient5 + ' ' + ingredient6 + ' ' + ingredient7;
 }
 
 eatHamburger();
 ```
+
+Espero que você não esteja com fome, foi apenas um exercício nostálgico. Como você percebeu, a função espera o resultado da função prepareHamburger, mesmo a chamada dela sendo após o da função eatHamburger, e só então parte para o console.log(). É um método muito legal para trabalhar com promises!
+
+# Como lidar com os erros usando async await?
+
+**Erros acontecerão!!!** Aceite bem, respire fundo, e use **try catch** para lidar com eles. A instrução ***try*** testa o bloco de código para gerenciar o erro, e a instrução ***catch*** faz com que você possa lidar com esse erro.
+
+```javascript
+const testingError = async () => {
+  try {
+    await functionThatDoesNotExist();
+  } catch(error) {
+    console.log(error.message);
+  }
+}
+
+testingError();
+```
+
+Como você pode ver, o catch recebe um objeto que contém a chave "message", onde existe a descrição do erro.
+Você também pode personalizar sua mensagem de erro fazendo o seguinte:
+
+```javascript
+const errorFunction = () => {
+  throw new Error("Deu ruim!");
+}
+
+const testingError = async () => {
+  try {
+    //A lógica dentro do seu bloco try trará uma nova mensagem de erro
+    await errorFunction();
+  }
+  catch (error) {
+    console.log("Aviso:", error.message);
+  }
+}
+
+testingError();
+
+```
+
+Parabéns, você chegou até aqui, agora é hora de elevar o nível e começar a fazer requisições às APIs. Está empolgado? Por aqui é empolgação total!!!
+___
+
+
 
 # Antes de prosseguirmos nessa viagem maravilhosa rumo à terra das requisições às APIs, PARE!!! Anote essas observações extremamente importantes!
 
@@ -266,3 +311,4 @@ Você pode usar callbacks, Promises, async await, o método assíncrono que pref
 [Quer estudar APIs?]()
 [Entenda mais sobre Promises]()
 [Funções assíncronas com async e await]()
+[Mais informações sobre try catch]()

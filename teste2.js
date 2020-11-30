@@ -30,15 +30,64 @@
   .then(optionThree => console.log(`${optionThree} and drink water...`))
   .catch(rejectOption => console.log(`${rejectOption}`)); */
 
-const prepareHamburger = (ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7) => {
-  return ingredient1 + ' ' + ingredient2 + ' ' + ingredient3 + ' ' + ingredient4 + ' ' + ingredient5 + ' ' + ingredient6 + ' ' + ingredient7;
-}
-
-const eatHamburger = async () => {
+/* const eatHamburger = async () => {
   //Lembre que aqui temos uma arrow function que por default tem uma função anônima
   //Nesse tipo de função o async vem antes da função anônima, e não antes de eatHamburger
   const result = await (prepareHamburger('Dois hambúrgueres,', 'alface,', 'queijo,', 'molho especial,', 'cebola,', 'e picles', 'num pão com gergelim!'))
   console.log(result);
 }
 
-eatHamburger();
+const prepareHamburger = (ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7) => {
+  return ingredient1 + ' ' + ingredient2 + ' ' + ingredient3 + ' ' + ingredient4 + ' ' + ingredient5 + ' ' + ingredient6 + ' ' + ingredient7;
+}
+
+eatHamburger(); */
+
+
+/* const testingError = async () => {
+  try {
+    await functionThatDoesNotExist();
+  } catch(error) {
+    /* console.log(error.message); 
+    console.error("outer", ex.message);
+  }
+}
+
+testingError(); */
+
+/* function doSomethingErrorProne () {
+  if (ourCodeMakesAMistake()) {
+    throw (new Error('A mensagem'));
+  } else {
+    doSomethingToGetAJavascriptError();
+  }
+} */
+
+/* try {
+  doSomethingErrorProne();
+}
+catch (e) {
+  console.log(e.name); // exibe 'Error'
+  console.log(e.message); // exibe 'A mensagem' ou uma mensagem de erro em JavaScript
+
+} */
+
+const errorFunction = () => {
+  throw new Error("Deu ruim!");
+}
+
+const testingError = async () => {
+  try {
+    await errorFunction();
+  }
+  catch (error) {
+    console.log("Aviso:", error.message);
+  }
+}
+
+testingError();
+
+
+
+
+
