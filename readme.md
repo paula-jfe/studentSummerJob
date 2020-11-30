@@ -300,8 +300,23 @@ window.onload = () => asyncFunction();
 ```
 
 *Isso é extremamente **necessário**, do contrário, é muito provável que nada tenha sido renderizado no seu navegador, visto que sua função assíncrona pode não ter naquele momento qualquer dado retornado. Você escrevendo esse código garante que ao carregar sua página, uma função anônima será executada, e o resultado dessa função anônima é chamar a sua função assíncrona **"asyncFunction()"**, fazendo a renderização somente quando houver uma resposta da sua função assíncrona.*
+___
 
----
+
+# Fetch API
+
+Na aula anterior você soube sobre a existência do método API fetch, agora vamos entender como ele funciona na prática.
+A função fetch() fornecerá ao navegador um meio de executar requisições HTTP utilizando promises e requer somente a URL da fonte de dados que você deseja acessar. A promise que retornar da função fetch() não rejeita status de erro HTTP, exceto caso haja algum problema de conexão, pois se ela for mal sucedida ou bem sucedida, você terá essa informação no seu status, portanto, com essa função é possível receber, tratar, enviar dados e lidar com erros.
+Vamos fazer nossa primeira requisição API fetch juntos.
+
+Vamos utilizar a Shibe.API e eu não tenho dúvidas de que você vai amar esse exercício.
+URL para a leitura da documentação: [](https://shibe.online/).
+Importante: Invista um tempo lendo a documentação, crie esse hábito, a documentação é muito parceira!
+O que diz a documentação?
+- Faça uma requisição GET na seguinte URL: [](http://shibe.online/api/shibes?count=[1-100]&urls=[true/false]&httpsUrls=[true/false]).
+- Você receberá uma resposta JSON de imagens randômicas que aparenta isso:
+
+
 
 Você pode usar callbacks, Promises, async await, o método assíncrono que preferir, contanto que seu código seja compreensível e intuitivo para qualquer desenvolvedor realizar manutenção. O importante na prática é que independente do método escolhido, você tenha um código simples que lide com os erros. ***#vidadedev #trybe #tryber #vqv***
 
