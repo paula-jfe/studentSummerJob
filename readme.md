@@ -85,7 +85,9 @@ Ainda está nublado? Vamos olhar o próximo exemplo e ver como a sintaxe do Cons
 
 ```javascript
 const promise = new Promise((resolve, reject) => {
- // A palavra new é um operador e Promise é o Construtor. A função anônima passada para new Promise é chamada de executor, enquanto que os parâmetros resolve e reject são os métodos, ou funções, passados para o executor.
+ //A palavra new é um operador e Promise é o Construtor. 
+ //A função anônima passada para new Promise é chamada de executor.
+ //Os parâmetros resolve e reject são os métodos, ou funções, passados para o executor.
 });
 ```
 
@@ -126,12 +128,14 @@ const winHackathon = (onTrack) => {
 
 winHackathon(false);
 
+//ou
+
 const winHackathon = (onTrack) => {
   //Modificando o momento do retorno dos métodos
   new Promise((resolve, reject) => {
     setTimeout(() => {
       if (onTrack === false) {
-        return reject(console.log("Preciso terminar meus projetos"));
+        return reject(console.log("Preciso terminar meus projetos."));
       }
       return resolve(console.log("Bora codar!"));
     }, 2000);
@@ -141,8 +145,10 @@ const winHackathon = (onTrack) => {
 winHackathon(false);
 ```
 
-Veja a resposta que você pode ter alterando a chamada da função winHackathon(false) para winHackathon(true). 
+Veja a resposta que você pode ter alterando a chamada da função winHackathon(false) para winHackathon(true).
+Como você percebeu, quando a Promise é bem sucedida, a função retorna a condição passada para resolve normalmente, mostrando a mensagem "Bora codar!", porém quando a função é mal sucedida, o output do seu terminal mostra a condição passada para reject, mensagem "Preciso terminar meus projetos." seguida de mensagens de erros! Você entenderá como tratar esses erros a seguir.
 
+![PushButton](https://thumbs.gfycat.com/CanineIdealHydra-size_restricted.gif)
 
 
 
