@@ -196,7 +196,7 @@ const chainingOperation = new Promise((resolve, reject) => {
 
 Rode o código no Node e veja a resposta das promises, depois mude o número da constante number para 18 e veja como o código encadeado funciona. *Não esqueça que o console.log() deve ser feito apenas no último then(), do contrário o retorno das promises anteriores serão **"undefined"***.
 
-![Toast](https://conteudo.imguol.com.br/c/tecnologia/gif/aniversario/09_dicaprio.gif)
+![Toast](https://media.tenor.com/images/21c7927187145ea4450297ef192ec5e5/tenor.gif)
 ___
 
 
