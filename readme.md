@@ -265,7 +265,6 @@ Parabéns, você chegou até aqui, agora é hora de elevar o nível e começar a
 ___
 
 
-
 # Antes de prosseguirmos nessa viagem maravilhosa rumo à terra das requisições às APIs, PARE!!! Anote essas observações extremamente importantes!
 
 ## Opção 1: Para você e, somente você, que quer testar o código no VS Code, através do NODE:
